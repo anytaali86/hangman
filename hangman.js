@@ -31,13 +31,14 @@ function startGame(){
     if (response.playgame === true) {
      newWord = new Word(currentWord);
      console.log("Let's Play!!!!!!") ;
-     console.log("SuperHero??") ;    
+     console.log("Guess which SuperHero is going to save our World??") ;    
      // show the masked word
      console.log(newWord.wordDisplay);
      console.log(guessesRemaining + " guesses remaining");
      guessMyWord();
     } else {
-      console.log("Ok, bye");
+      console.log("************"); 
+      console.log("Catch you later \n");
     }
   });
 }
@@ -66,7 +67,9 @@ function guessMyWord() {
 
         if (!newWord.wordDisplay.includes("_")) {
           // if there are no unguessed letters then the word was guessed
+          console.log("*********");
           console.log("you win!!");
+          console.log("*********");
           startGame();
           return;
         }        
@@ -82,8 +85,10 @@ function guessMyWord() {
 
         guessMyWord();
 
-      } else{        
-        console.log("game over!");
+      } else{    
+        console.log("**********");    
+        console.log("Game Over!");
+        console.log("**********"); 
         startGame();
         return;
       }
